@@ -1,0 +1,71 @@
+2025-10-31 10:19:00,520 - INFO - Server started on 0.0.0.0:8888
+2025-10-31 10:19:00,520 - INFO - Server listening on all network interfaces
+2025-10-31 10:19:00,520 - INFO - Hostname: ruturaj-asus-VB
+2025-10-31 10:19:00,561 - INFO - IP Addresses:
+2025-10-31 10:19:00,561 - INFO -     - 192.168.59.1:8888
+2025-10-31 10:19:00,561 - INFO -     - 192.168.56.1:8888
+2025-10-31 10:19:00,561 - INFO -     - 192.168.243.183:8888
+2025-10-31 10:19:00,561 - INFO - Server ready to accept connections
+2025-10-31 10:21:12,128 - INFO - New connection from 127.0.0.1:55716
+2025-10-31 10:21:12,132 - INFO - Received from 127.0.0.1:55716: PUT lever_1761886272106.cpp
+2025-10-31 10:21:12,143 - INFO - File lever_1761886272106.cpp received successfully from 127.0.0.1:55716, 1355 bytes
+2025-10-31 10:21:12,145 - INFO - Client 127.0.0.1:55716 disconnected
+2025-10-31 10:21:12,145 - INFO - Connection closed with 127.0.0.1:55716
+2025-10-31 10:22:06,306 - INFO - New connection from 127.0.0.1:50553
+2025-10-31 10:22:06,310 - INFO - Received from 127.0.0.1:50553: GET lever_1761886272106.cpp
+2025-10-31 10:22:06,312 - INFO - File lever_1761886272106.cpp sent successfully to 127.0.0.1:50553, 1333 bytes
+2025-10-31 10:22:06,319 - INFO - Client 127.0.0.1:50553 disconnected
+2025-10-31 10:22:06,321 - INFO - Connection closed with 127.0.0.1:50553
+2025-10-31 10:22:16,047 - INFO - New connection from 127.0.0.1:53582
+2025-10-31 10:22:16,054 - INFO - Received from 127.0.0.1:53582: DEL lever_1761886272106.cpp
+2025-10-31 10:22:16,054 - INFO - File lever_1761886272106.cpp deleted by 127.0.0.1:53582
+2025-10-31 10:22:16,059 - INFO - Client 127.0.0.1:53582 disconnected
+2025-10-31 10:22:16,059 - INFO - Connection closed with 127.0.0.1:53582
+2025-10-31 10:22:40,231 - INFO - Received signal 2, shutting down...
+2025-10-31 10:22:40,268 - INFO - Shutting down server...
+2025-10-31 10:22:40,770 - INFO - Server statistics:
+2025-10-31 10:22:40,771 - INFO -   Uptime: 0d 0h 3m 40s
+2025-10-31 10:22:40,771 - INFO -   Connections: 3
+2025-10-31 10:22:40,771 - INFO -   Commands processed: 3
+2025-10-31 10:22:40,771 - INFO -   Files transferred: 2
+2025-10-31 10:22:40,771 - INFO -   Bytes sent: 1,371
+2025-10-31 10:22:40,771 - INFO -   Bytes received: 1,355
+2025-10-31 10:22:40,774 - INFO -   Errors: 0
+2025-10-31 10:22:40,774 - INFO - Server stopped
+2025-10-31 14:17:49,853 - INFO - Server started on 0.0.0.0:8888
+2025-10-31 14:17:49,853 - INFO - Server listening on all network interfaces
+2025-10-31 14:17:49,853 - INFO - Hostname: ruturaj-asus-VB
+2025-10-31 14:17:49,853 - INFO - IP Addresses:
+2025-10-31 14:17:49,868 - INFO -     - 192.168.59.1:8888
+2025-10-31 14:17:49,868 - INFO -     - 192.168.56.1:8888
+2025-10-31 14:17:49,868 - INFO -     - 10.20.21.21:8888
+2025-10-31 14:17:49,869 - INFO - Server ready to accept connections
+2025-10-31 14:19:24,486 - INFO - New connection from 127.0.0.1:63833
+2025-10-31 14:19:24,486 - INFO - Received from 127.0.0.1:63833: PUT lever_1761900564478.cpp
+2025-10-31 14:19:24,488 - INFO - File lever_1761900564478.cpp received successfully from 127.0.0.1:63833, 1355 bytes
+2025-10-31 14:19:24,492 - INFO - Client 127.0.0.1:63833 disconnected
+2025-10-31 14:19:24,492 - INFO - Connection closed with 127.0.0.1:63833
+2025-10-31 14:20:01,317 - INFO - New connection from 127.0.0.1:61729
+2025-10-31 14:20:01,319 - INFO - Received from 127.0.0.1:61729: GET lever_1761900564478.cpp
+2025-10-31 14:20:01,319 - INFO - File lever_1761900564478.cpp sent successfully to 127.0.0.1:61729, 1333 bytes
+2025-10-31 14:20:01,321 - INFO - Client 127.0.0.1:61729 disconnected
+2025-10-31 14:20:01,321 - INFO - Connection closed with 127.0.0.1:61729
+2025-10-31 14:22:12,167 - INFO - Received signal 2, shutting down...
+2025-10-31 14:22:12,167 - INFO - Shutting down server...
+2025-10-31 14:22:12,671 - INFO - Server statistics:
+2025-10-31 14:22:12,671 - INFO -   Uptime: 0d 0h 4m 22s
+2025-10-31 14:22:12,671 - INFO -   Connections: 2
+2025-10-31 14:22:12,671 - INFO -   Commands processed: 2
+2025-10-31 14:22:12,671 - INFO -   Files transferred: 2
+2025-10-31 14:22:12,671 - INFO -   Bytes sent: 1,371
+2025-10-31 14:22:12,671 - INFO -   Bytes received: 1,355
+2025-10-31 14:22:12,671 - INFO -   Errors: 0
+2025-10-31 14:22:12,671 - INFO - Server stopped
+2025-11-02 17:26:57,055 - INFO - Server started on 0.0.0.0:8888
+2025-11-02 17:26:57,055 - INFO - Server listening on all network interfaces
+2025-11-02 17:26:57,055 - INFO - Hostname: ruturaj-asus-VB
+2025-11-02 17:26:57,083 - INFO - IP Addresses:
+2025-11-02 17:26:57,083 - INFO -     - 192.168.59.1:8888
+2025-11-02 17:26:57,083 - INFO -     - 192.168.56.1:8888
+2025-11-02 17:26:57,086 - INFO -     - 192.168.1.6:8888
+2025-11-02 17:26:57,087 - INFO - Server ready to accept connections
