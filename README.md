@@ -403,28 +403,6 @@ CP2/
 - Role-based filtering
 - Recent package listings
 
-## 📖 Documentation
-
-**� [Complete Documentation](docs/README.md)** - Comprehensive mdBook with 80+ chapters
-
-**Quick Links:**
-- [Installation Guide](docs/src/appendix/setup.md)
-- [Configuration Reference](docs/src/appendix/configuration.md)
-- [API Reference](docs/src/appendix/api-reference.md)
-- [Troubleshooting Guide](docs/src/appendix/troubleshooting.md)
-- [Security Best Practices](docs/src/appendix/security.md)
-
-**Learning Resources:**
-- [Socket Programming Tutorial](docs/src/ftp-server/concepts/sockets.md)
-- [Multithreading Concepts](docs/src/ftp-server/concepts/multithreading.md)
-- [TCP/IP Networking](docs/src/ftp-server/concepts/network.md)
-- [Session Management](docs/src/ftp-server/concepts/sessions.md)
-
-**Code Walkthroughs:**
-- [FTP Server Implementation](docs/src/ftp-server/implementation/server-code.md) - 746 lines explained
-- [Backend Architecture](docs/src/backend/overview.md)
-- [Frontend Architecture](docs/src/frontend/overview.md)
-- [Complete Upload Flow](docs/src/request-flow/upload.md)
 
 ## � Security Features
 
@@ -436,27 +414,13 @@ CP2/
 - **Activity Timeout**: Automatic session termination
 - **CORS Protection**: Configured origin restrictions
 
-## 📊 Project Statistics
 
-- **Total Lines of Code**: ~15,000+
-- **Backend Routes**: 20+
-- **Frontend Components**: 15+
-- **Database Tables**: 4
-- **Supported File Operations**: 5 (LIST, GET, PUT, DEL, STAT)
-- **User Roles**: 3 (Developer, Tester, HR)
-- **Documentation Pages**: 80+
-
-## 🤝 Contributing
-
-Contributions welcome! Please read the [documentation](docs/README.md) first to understand the architecture.
 
 ## 📝 License
 
 This project is for educational purposes as part of Computer Networks course project.
 
-## 👨‍💻 Authors
 
-Built with ❤️ by Computer Engineering students.
 
 ---
 
