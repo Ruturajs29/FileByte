@@ -1,71 +1,91 @@
-2025-10-31 10:19:00,520 - INFO - Server started on 0.0.0.0:8888
-2025-10-31 10:19:00,520 - INFO - Server listening on all network interfaces
-2025-10-31 10:19:00,520 - INFO - Hostname: ruturaj-asus-VB
-2025-10-31 10:19:00,561 - INFO - IP Addresses:
-2025-10-31 10:19:00,561 - INFO -     - 192.168.59.1:8888
-2025-10-31 10:19:00,561 - INFO -     - 192.168.56.1:8888
-2025-10-31 10:19:00,561 - INFO -     - 192.168.243.183:8888
-2025-10-31 10:19:00,561 - INFO - Server ready to accept connections
-2025-10-31 10:21:12,128 - INFO - New connection from 127.0.0.1:55716
-2025-10-31 10:21:12,132 - INFO - Received from 127.0.0.1:55716: PUT lever_1761886272106.cpp
-2025-10-31 10:21:12,143 - INFO - File lever_1761886272106.cpp received successfully from 127.0.0.1:55716, 1355 bytes
-2025-10-31 10:21:12,145 - INFO - Client 127.0.0.1:55716 disconnected
-2025-10-31 10:21:12,145 - INFO - Connection closed with 127.0.0.1:55716
-2025-10-31 10:22:06,306 - INFO - New connection from 127.0.0.1:50553
-2025-10-31 10:22:06,310 - INFO - Received from 127.0.0.1:50553: GET lever_1761886272106.cpp
-2025-10-31 10:22:06,312 - INFO - File lever_1761886272106.cpp sent successfully to 127.0.0.1:50553, 1333 bytes
-2025-10-31 10:22:06,319 - INFO - Client 127.0.0.1:50553 disconnected
-2025-10-31 10:22:06,321 - INFO - Connection closed with 127.0.0.1:50553
-2025-10-31 10:22:16,047 - INFO - New connection from 127.0.0.1:53582
-2025-10-31 10:22:16,054 - INFO - Received from 127.0.0.1:53582: DEL lever_1761886272106.cpp
-2025-10-31 10:22:16,054 - INFO - File lever_1761886272106.cpp deleted by 127.0.0.1:53582
-2025-10-31 10:22:16,059 - INFO - Client 127.0.0.1:53582 disconnected
-2025-10-31 10:22:16,059 - INFO - Connection closed with 127.0.0.1:53582
-2025-10-31 10:22:40,231 - INFO - Received signal 2, shutting down...
-2025-10-31 10:22:40,268 - INFO - Shutting down server...
-2025-10-31 10:22:40,770 - INFO - Server statistics:
-2025-10-31 10:22:40,771 - INFO -   Uptime: 0d 0h 3m 40s
-2025-10-31 10:22:40,771 - INFO -   Connections: 3
-2025-10-31 10:22:40,771 - INFO -   Commands processed: 3
-2025-10-31 10:22:40,771 - INFO -   Files transferred: 2
-2025-10-31 10:22:40,771 - INFO -   Bytes sent: 1,371
-2025-10-31 10:22:40,771 - INFO -   Bytes received: 1,355
-2025-10-31 10:22:40,774 - INFO -   Errors: 0
-2025-10-31 10:22:40,774 - INFO - Server stopped
-2025-10-31 14:17:49,853 - INFO - Server started on 0.0.0.0:8888
-2025-10-31 14:17:49,853 - INFO - Server listening on all network interfaces
-2025-10-31 14:17:49,853 - INFO - Hostname: ruturaj-asus-VB
-2025-10-31 14:17:49,853 - INFO - IP Addresses:
-2025-10-31 14:17:49,868 - INFO -     - 192.168.59.1:8888
-2025-10-31 14:17:49,868 - INFO -     - 192.168.56.1:8888
-2025-10-31 14:17:49,868 - INFO -     - 10.20.21.21:8888
-2025-10-31 14:17:49,869 - INFO - Server ready to accept connections
-2025-10-31 14:19:24,486 - INFO - New connection from 127.0.0.1:63833
-2025-10-31 14:19:24,486 - INFO - Received from 127.0.0.1:63833: PUT lever_1761900564478.cpp
-2025-10-31 14:19:24,488 - INFO - File lever_1761900564478.cpp received successfully from 127.0.0.1:63833, 1355 bytes
-2025-10-31 14:19:24,492 - INFO - Client 127.0.0.1:63833 disconnected
-2025-10-31 14:19:24,492 - INFO - Connection closed with 127.0.0.1:63833
-2025-10-31 14:20:01,317 - INFO - New connection from 127.0.0.1:61729
-2025-10-31 14:20:01,319 - INFO - Received from 127.0.0.1:61729: GET lever_1761900564478.cpp
-2025-10-31 14:20:01,319 - INFO - File lever_1761900564478.cpp sent successfully to 127.0.0.1:61729, 1333 bytes
-2025-10-31 14:20:01,321 - INFO - Client 127.0.0.1:61729 disconnected
-2025-10-31 14:20:01,321 - INFO - Connection closed with 127.0.0.1:61729
-2025-10-31 14:22:12,167 - INFO - Received signal 2, shutting down...
-2025-10-31 14:22:12,167 - INFO - Shutting down server...
-2025-10-31 14:22:12,671 - INFO - Server statistics:
-2025-10-31 14:22:12,671 - INFO -   Uptime: 0d 0h 4m 22s
-2025-10-31 14:22:12,671 - INFO -   Connections: 2
-2025-10-31 14:22:12,671 - INFO -   Commands processed: 2
-2025-10-31 14:22:12,671 - INFO -   Files transferred: 2
-2025-10-31 14:22:12,671 - INFO -   Bytes sent: 1,371
-2025-10-31 14:22:12,671 - INFO -   Bytes received: 1,355
-2025-10-31 14:22:12,671 - INFO -   Errors: 0
-2025-10-31 14:22:12,671 - INFO - Server stopped
-2025-11-02 17:26:57,055 - INFO - Server started on 0.0.0.0:8888
-2025-11-02 17:26:57,055 - INFO - Server listening on all network interfaces
-2025-11-02 17:26:57,055 - INFO - Hostname: ruturaj-asus-VB
-2025-11-02 17:26:57,083 - INFO - IP Addresses:
-2025-11-02 17:26:57,083 - INFO -     - 192.168.59.1:8888
-2025-11-02 17:26:57,083 - INFO -     - 192.168.56.1:8888
-2025-11-02 17:26:57,086 - INFO -     - 192.168.1.6:8888
-2025-11-02 17:26:57,087 - INFO - Server ready to accept connections
+2025-11-07 14:11:16,794 - INFO - Server started on 0.0.0.0:8888
+2025-11-07 14:11:16,794 - INFO - Server listening on all network interfaces
+2025-11-07 14:11:16,794 - INFO - Hostname: ruturaj-asus-VB
+2025-11-07 14:11:16,813 - INFO - IP Addresses:
+2025-11-07 14:11:16,813 - INFO -     - 192.168.59.1:8888
+2025-11-07 14:11:16,813 - INFO -     - 192.168.56.1:8888
+2025-11-07 14:11:16,813 - INFO -     - 10.20.29.39:8888
+2025-11-07 14:11:16,815 - INFO - Server ready to accept connections
+2025-11-09 15:28:53,044 - INFO - Server started on 0.0.0.0:8888
+2025-11-09 15:28:53,044 - INFO - Server listening on all network interfaces
+2025-11-09 15:28:53,044 - INFO - Hostname: ruturaj-asus-VB
+2025-11-09 15:28:53,090 - INFO - IP Addresses:
+2025-11-09 15:28:53,093 - INFO -     - 192.168.59.1:8888
+2025-11-09 15:28:53,093 - INFO -     - 192.168.56.1:8888
+2025-11-09 15:28:53,093 - INFO -     - 192.168.1.6:8888
+2025-11-09 15:28:53,094 - INFO - Server ready to accept connections
+2025-11-09 22:28:40,118 - INFO - Server started on 0.0.0.0:8888
+2025-11-09 22:28:40,119 - INFO - Server listening on all network interfaces
+2025-11-09 22:28:40,119 - INFO - Hostname: ruturaj-asus-VB
+2025-11-09 22:28:40,133 - INFO - IP Addresses:
+2025-11-09 22:28:40,133 - INFO -     - 192.168.59.1:8888
+2025-11-09 22:28:40,133 - INFO -     - 192.168.56.1:8888
+2025-11-09 22:28:40,133 - INFO -     - 192.168.1.5:8888
+2025-11-09 22:28:40,133 - INFO - Server ready to accept connections
+2025-11-09 22:45:45,433 - INFO - New connection from 127.0.0.1:57578
+2025-11-09 22:45:45,434 - INFO - Received from 127.0.0.1:57578: PUT undertaking_1762708545419.pdf
+2025-11-09 22:45:45,441 - INFO - File undertaking_1762708545419.pdf received successfully from 127.0.0.1:57578, 114274 bytes
+2025-11-09 22:45:45,447 - INFO - Client 127.0.0.1:57578 disconnected
+2025-11-09 22:45:45,448 - INFO - Connection closed with 127.0.0.1:57578
+2025-11-09 22:46:02,605 - INFO - New connection from 127.0.0.1:65272
+2025-11-09 22:46:02,606 - INFO - Received from 127.0.0.1:65272: PUT undertaking_1762708562595.pdf
+2025-11-09 22:46:02,610 - INFO - File undertaking_1762708562595.pdf received successfully from 127.0.0.1:65272, 114274 bytes
+2025-11-09 22:46:02,612 - INFO - Client 127.0.0.1:65272 disconnected
+2025-11-09 22:46:02,613 - INFO - Connection closed with 127.0.0.1:65272
+2025-11-09 22:46:12,727 - INFO - New connection from 127.0.0.1:57101
+2025-11-09 22:46:12,727 - INFO - Received from 127.0.0.1:57101: DEL undertaking_1762708562595.pdf
+2025-11-09 22:46:12,745 - INFO - File undertaking_1762708562595.pdf deleted by 127.0.0.1:57101
+2025-11-09 22:46:12,747 - INFO - Client 127.0.0.1:57101 disconnected
+2025-11-09 22:46:12,747 - INFO - Connection closed with 127.0.0.1:57101
+2025-11-09 22:46:15,544 - INFO - New connection from 127.0.0.1:57104
+2025-11-09 22:46:15,544 - INFO - Received from 127.0.0.1:57104: DEL undertaking_1762708545419.pdf
+2025-11-09 22:46:15,544 - INFO - File undertaking_1762708545419.pdf deleted by 127.0.0.1:57104
+2025-11-09 22:46:15,544 - INFO - Client 127.0.0.1:57104 disconnected
+2025-11-09 22:46:15,544 - INFO - Connection closed with 127.0.0.1:57104
+2025-11-09 23:00:08,614 - INFO - New connection from 127.0.0.1:64245
+2025-11-09 23:00:08,615 - INFO - Received from 127.0.0.1:64245: PUT keras_1762709408598.json
+2025-11-09 23:00:08,621 - INFO - File keras_1762709408598.json received successfully from 127.0.0.1:64245, 147 bytes
+2025-11-09 23:00:08,624 - INFO - Client 127.0.0.1:64245 disconnected
+2025-11-09 23:00:08,628 - INFO - Connection closed with 127.0.0.1:64245
+2025-11-09 23:01:12,484 - INFO - New connection from 127.0.0.1:59832
+2025-11-09 23:01:12,485 - INFO - Received from 127.0.0.1:59832: DEL keras_1762709408598.json
+2025-11-09 23:01:12,487 - INFO - File keras_1762709408598.json deleted by 127.0.0.1:59832
+2025-11-09 23:01:12,489 - INFO - Client 127.0.0.1:59832 disconnected
+2025-11-09 23:01:12,489 - INFO - Connection closed with 127.0.0.1:59832
+2025-11-09 23:01:48,760 - INFO - New connection from 127.0.0.1:52115
+2025-11-09 23:01:48,761 - INFO - Received from 127.0.0.1:52115: PUT keras_1762709508726.json
+2025-11-09 23:01:48,766 - INFO - File keras_1762709508726.json received successfully from 127.0.0.1:52115, 147 bytes
+2025-11-09 23:01:48,774 - INFO - Client 127.0.0.1:52115 disconnected
+2025-11-09 23:01:48,774 - INFO - Connection closed with 127.0.0.1:52115
+2025-11-09 23:03:51,882 - INFO - New connection from 127.0.0.1:61367
+2025-11-09 23:03:51,883 - INFO - Received from 127.0.0.1:61367: DEL keras_1762709508726.json
+2025-11-09 23:03:51,884 - INFO - File keras_1762709508726.json deleted by 127.0.0.1:61367
+2025-11-09 23:03:51,886 - INFO - Client 127.0.0.1:61367 disconnected
+2025-11-09 23:03:51,887 - INFO - Connection closed with 127.0.0.1:61367
+2025-11-09 23:04:01,704 - INFO - New connection from 127.0.0.1:62599
+2025-11-09 23:04:01,705 - INFO - Received from 127.0.0.1:62599: PUT keras_1762709641696.json
+2025-11-09 23:04:01,708 - INFO - File keras_1762709641696.json received successfully from 127.0.0.1:62599, 147 bytes
+2025-11-09 23:04:01,716 - INFO - Client 127.0.0.1:62599 disconnected
+2025-11-09 23:04:01,717 - INFO - Connection closed with 127.0.0.1:62599
+2025-11-10 09:12:23,113 - INFO - Server started on 0.0.0.0:8888
+2025-11-10 09:12:23,113 - INFO - Server listening on all network interfaces
+2025-11-10 09:12:23,113 - INFO - Hostname: ruturaj-asus-VB
+2025-11-10 09:12:23,149 - INFO - IP Addresses:
+2025-11-10 09:12:23,149 - INFO -     - 192.168.59.1:8888
+2025-11-10 09:12:23,149 - INFO -     - 192.168.56.1:8888
+2025-11-10 09:12:23,150 - INFO - Server ready to accept connections
+2025-11-10 09:16:13,103 - INFO - New connection from 127.0.0.1:50503
+2025-11-10 09:16:13,106 - INFO - Received from 127.0.0.1:50503: PUT auth_1762746373081.js
+2025-11-10 09:16:13,112 - INFO - File auth_1762746373081.js received successfully from 127.0.0.1:50503, 434 bytes
+2025-11-10 09:16:13,117 - INFO - Client 127.0.0.1:50503 disconnected
+2025-11-10 09:16:13,119 - INFO - Connection closed with 127.0.0.1:50503
+2025-11-10 09:16:33,465 - INFO - New connection from 127.0.0.1:54446
+2025-11-10 09:16:33,471 - INFO - Received from 127.0.0.1:54446: PUT package_1762746393434.js
+2025-11-10 09:16:33,476 - INFO - File package_1762746393434.js received successfully from 127.0.0.1:54446, 1031 bytes
+2025-11-10 09:16:33,494 - INFO - Client 127.0.0.1:54446 disconnected
+2025-11-10 09:16:33,495 - INFO - Connection closed with 127.0.0.1:54446
+2025-11-10 09:16:42,934 - INFO - New connection from 127.0.0.1:59074
+2025-11-10 09:16:42,937 - INFO - Received from 127.0.0.1:59074: PUT repo_1762746402897.js
+2025-11-10 09:16:42,945 - INFO - File repo_1762746402897.js received successfully from 127.0.0.1:59074, 667 bytes
+2025-11-10 09:16:42,966 - INFO - Client 127.0.0.1:59074 disconnected
+2025-11-10 09:16:42,969 - INFO - Connection closed with 127.0.0.1:59074

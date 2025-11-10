@@ -3,7 +3,7 @@
 A full-stack enterprise-grade software distribution system with role-based access control, featuring a custom Python TCP-based FTP server, Node.js REST API backend, and React web interface.
 
 ## 🏗️ Architecture
-
+k
 ```
 ┌─────────────┐          ┌────────────────┐          ┌─────────────┐
 │   React     │  HTTP    │   Express.js   │   TCP    │   Python    │
@@ -15,7 +15,7 @@ A full-stack enterprise-grade software distribution system with role-based acces
                          ┌─────────────┐
                          │   MySQL     │
                          │  Database   |
-                         |  port 3306  |         
+                         |  port 3306  |
                          └─────────────┘
 ```
 
@@ -31,6 +31,7 @@ A full-stack enterprise-grade software distribution system with role-based acces
 **Complete mdBook documentation available at: `docs/`**
 
 View documentation:
+
 ```bash
 cd docs
 mdbook serve --open
@@ -40,6 +41,7 @@ mdbook serve --open
 Or read: [Documentation README](docs/README.md)
 
 ### Documentation Contents:
+
 - ✅ **FTP Server** - Custom Python TCP server (socket programming, multithreading, protocols)
 - ✅ **Backend** - Express.js REST API (authentication, ORM, FTP integration)
 - ✅ **Frontend** - React SPA (components, state management, routing)
@@ -53,7 +55,7 @@ Or read: [Documentation README](docs/README.md)
 - Node.js (v14 or higher)
 - Python 3+
 - MySQL Server (v8.0)
-- npm 
+- npm
 
 ## 🚀 Quick Start
 
@@ -202,6 +204,7 @@ The frontend will run on `http://localhost:3000`.
 ## 👥 User Roles & Permissions
 
 ### Developer
+
 - Create and manage repositories
 - Create packages
 - Upload files to packages
@@ -209,35 +212,40 @@ The frontend will run on `http://localhost:3000`.
 - View all repositories with Developer access
 
 ### Tester
+
 - View repositories with Tester access
 - Update package status (Accept/Reject/Pending)
 - Upload and download files
 - Create packages
 
 ### HR
+
 - View repositories with HR access
 - Upload and download files
 - Create packages
 
 ## 🔑 Sample Login Credentials
 
-| Username | Password | Role |
-|----------|----------|------|
-| dev1 | password123 | Developer |
-| tester1 | password123 | Tester |
-| hr1 | password123 | HR |
+| Username | Password    | Role      |
+| -------- | ----------- | --------- |
+| dev1     | password123 | Developer |
+| tester1  | password123 | Tester    |
+| hr1      | password123 | HR        |
 
 ## 📡 API Endpoints
 
 ### Authentication
+
 - `POST /api/auth/login` - Login user
 - `POST /api/auth/register` - Register new user
-- `GET /api/auth/me` - Get current user info
+- `GET /api/auth/me` - Get current user info (protected route)
 
 ### Dashboard
+
 - `GET /api/dashboard` - Get dashboard statistics
 
 ### Repositories
+
 - `GET /api/repos` - Get all repositories (filtered by role)
 - `GET /api/repos/:repo_name` - Get repository details
 - `POST /api/repos` - Create new repository
@@ -245,6 +253,7 @@ The frontend will run on `http://localhost:3000`.
 - `DELETE /api/repos/:repo_name` - Delete repository
 
 ### Packages
+
 - `GET /api/repos/:repo_name/packages` - Get packages by repository
 - `GET /api/packages/:pkg_name` - Get package details
 - `POST /api/repos/:repo_name/packages` - Create package
@@ -252,6 +261,7 @@ The frontend will run on `http://localhost:3000`.
 - `DELETE /api/packages/:pkg_name` - Delete package
 
 ### File Operations
+
 - `POST /api/packages/:pkg_name/upload` - Upload file
 - `GET /api/packages/:pkg_name/download/:filename` - Download file
 - `DELETE /api/packages/:pkg_name/file/:filename` - Delete file
@@ -269,6 +279,7 @@ The frontend will run on `http://localhost:3000`.
 ## 🔧 TCP Server Commands
 
 The Python TCP server supports:
+
 - `LIST` - List files on server
 - `GET <filename>` - Download file
 - `PUT <filename>` - Upload file
@@ -279,7 +290,7 @@ The Python TCP server supports:
 ## 📁 Project Structure
 
 ```
-CP2/
+FileByte/
 ├── backend/
 │   ├── src/
 │   │   ├── config/
@@ -348,7 +359,7 @@ CP2/
 3. **Role-Based Access**: Frontend and backend enforce role-based permissions
 4. **Repository Management**: Users create/view repositories based on role
 5. **Package Management**: Users create packages within repositories
-6. **File Operations**: 
+6. **File Operations**:
    - Frontend uploads file to Express backend (multipart/form-data)
    - Backend saves file temporarily
    - Backend connects to Python TCP server using `tcpClient.js`
@@ -359,38 +370,45 @@ CP2/
 ## 🐛 Troubleshooting
 
 ### TCP Server Connection Issues
+
 - Ensure Python TCP server is running on port 8888
 - Check firewall settings
 - Verify TCP_HOST and TCP_PORT in backend `.env`
 
 ### Database Connection Issues
+
 - Verify MySQL server is running
 - Check database credentials in backend `.env`
 - Ensure database `ftp_manager` exists
 
 ### CORS Issues
+
 - Backend is configured with CORS enabled
 - Ensure frontend API_URL matches backend address
 
 ## 🎯 Key Features
 
 ### Multi-Role Access Control
+
 - **Repositories support multiple roles** - Assign Developer, Tester, and HR access simultaneously
 - Role-based permissions for create, read, update, delete operations
 - Per-repository access configuration
 
 ### Session Management
+
 - **JWT authentication** with 30-minute token expiry
 - **Inactivity timeout** - Auto-logout after 15 minutes of no activity
 - Activity tracking across mousedown, keydown, scroll, touchstart, click events
 
 ### File Management
+
 - **Binary file transfers** via custom FTP protocol
 - Chunked upload/download (8KB chunks)
 - File deletion with FTP server cleanup
 - Progress tracking during uploads
 
 ### Custom FTP Server
+
 - **Pure Python socket implementation**
 - Multithreaded client handling
 - File operations: LIST, GET, PUT, DEL, STAT
@@ -398,11 +416,11 @@ CP2/
 - Comprehensive logging and statistics
 
 ### Dashboard Analytics
+
 - Real-time repository count
 - Package status breakdown (Accepted/Rejected/Pending)
 - Role-based filtering
 - Recent package listings
-
 
 ## � Security Features
 
@@ -414,13 +432,9 @@ CP2/
 - **Activity Timeout**: Automatic session termination
 - **CORS Protection**: Configured origin restrictions
 
-
-
 ## 📝 License
 
 This project is for educational purposes as part of Computer Networks course project.
-
-
 
 ---
 

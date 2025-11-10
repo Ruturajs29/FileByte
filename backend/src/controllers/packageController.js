@@ -1,9 +1,12 @@
-const { Package, Repository, User, Upload } = require('../models');
-const tcpClient = require('../services/tcpClient');
-const multer = require('multer');
-const path = require('path');
-const fs = require('fs');
-const { ensureUploadDir, generateUniqueFilename } = require('../utils/fileUtils');
+const { Package, Repository, User, Upload } = require("../models");
+const tcpClient = require("../services/tcpClient");
+const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
+const {
+  ensureUploadDir,
+  generateUniqueFilename,
+} = require("../utils/fileUtils");
 
 // Configure multer for file uploads
 const storage = multer.diskStorage({
@@ -14,12 +17,12 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     const uniqueName = generateUniqueFilename(file.originalname);
     cb(null, uniqueName);
-  }
+  },
 });
 
-const upload = multer({ 
+const upload = multer({
   storage,
-  limits: { fileSize: parseInt(process.env.MAX_FILE_SIZE) || 104857600 } // 100MB default
+  limits: { fileSize: parseInt(process.env.MAX_FILE_SIZE) || 104857600 }, // 100MB default
 });
 
 /**
@@ -33,13 +36,13 @@ const getPackagesByRepo = async (req, res) => {
 
     // Check if repository exists
     const repository = await Repository.findOne({
-      where: { repo_name }
+      where: { repo_name },
     });
 
     if (!repository) {
       return res.status(404).json({
         success: false,
-        message: 'Repository not found'
+        message: "Repository not found",
       });
     }
 
@@ -48,7 +51,7 @@ const getPackagesByRepo = async (req, res) => {
     if (!accessRoles.includes(role)) {
       return res.status(403).json({
         success: false,
-        message: 'Access denied to this repository'
+        message: "Access denied to this repository",
       });
     }
 
@@ -58,24 +61,23 @@ const getPackagesByRepo = async (req, res) => {
       include: [
         {
           model: User,
-          as: 'creator',
-          attributes: ['username', 'role']
-        }
+          as: "creator",
+          attributes: ["username", "role"],
+        },
       ],
-      order: [['created_at', 'DESC']]
+      order: [["created_at", "DESC"]],
     });
 
     res.json({
       success: true,
-      data: packages
+      data: packages,
     });
-
   } catch (error) {
-    console.error('Get packages error:', error);
+    console.error("Get packages error:", error);
     res.status(500).json({
       success: false,
-      message: 'Internal server error',
-      error: error.message
+      message: "Internal server error",
+      error: error.message,
     });
   }
 };
@@ -93,47 +95,46 @@ const getPackageByName = async (req, res) => {
       include: [
         {
           model: Repository,
-          as: 'repository',
-          attributes: ['repo_name', 'description', 'hasAccess']
+          as: "repository",
+          attributes: ["repo_name", "description", "hasAccess"],
         },
         {
           model: User,
-          as: 'creator',
-          attributes: ['username', 'role']
+          as: "creator",
+          attributes: ["username", "role"],
         },
         {
           model: Upload,
-          as: 'uploads',
+          as: "uploads",
           include: [
             {
               model: User,
-              as: 'uploader',
-              attributes: ['username', 'role']
-            }
+              as: "uploader",
+              attributes: ["username", "role"],
+            },
           ],
-          order: [['uploaded_at', 'DESC']]
-        }
-      ]
+          order: [["uploaded_at", "DESC"]],
+        },
+      ],
     });
 
     if (!package) {
       return res.status(404).json({
         success: false,
-        message: 'Package not found'
+        message: "Package not found",
       });
     }
 
     res.json({
       success: true,
-      data: package
+      data: package,
     });
-
   } catch (error) {
-    console.error('Get package error:', error);
+    console.error("Get package error:", error);
     res.status(500).json({
       success: false,
-      message: 'Internal server error',
-      error: error.message
+      message: "Internal server error",
+      error: error.message,
     });
   }
 };
@@ -152,19 +153,19 @@ const createPackage = async (req, res) => {
     if (!pkg_name || !version) {
       return res.status(400).json({
         success: false,
-        message: 'Package name and version are required'
+        message: "Package name and version are required",
       });
     }
 
     // Check if repository exists
     const repository = await Repository.findOne({
-      where: { repo_name }
+      where: { repo_name },
     });
 
     if (!repository) {
       return res.status(404).json({
         success: false,
-        message: 'Repository not found'
+        message: "Repository not found",
       });
     }
 
@@ -173,7 +174,7 @@ const createPackage = async (req, res) => {
     if (!accessRoles.includes(role)) {
       return res.status(403).json({
         success: false,
-        message: 'Access denied to this repository'
+        message: "Access denied to this repository",
       });
     }
 
@@ -183,7 +184,7 @@ const createPackage = async (req, res) => {
     if (existingPkg) {
       return res.status(409).json({
         success: false,
-        message: 'Package name already exists'
+        message: "Package name already exists",
       });
     }
 
@@ -194,21 +195,20 @@ const createPackage = async (req, res) => {
       created_by_username: username,
       version,
       description,
-      status: 'pending'
+      status: "pending",
     });
-    console.log("HII :- ",newPackage);
+    console.log("HII :- ", newPackage);
     res.status(201).json({
       success: true,
-      message: 'Package created successfully',
-      data: newPackage
+      message: "Package created successfully",
+      data: newPackage,
     });
-
   } catch (error) {
-    console.error('Create package error:', error);
+    console.error("Create package error:", error);
     res.status(500).json({
       success: false,
-      message: 'Internal server error',
-      error: error.message
+      message: "Internal server error",
+      error: error.message,
     });
   }
 };
@@ -224,18 +224,18 @@ const updatePackageStatus = async (req, res) => {
     const { role } = req.user;
 
     // Only Testers can update status
-    if (role !== 'Tester') {
+    if (role !== "Tester") {
       return res.status(403).json({
         success: false,
-        message: 'Only Testers can update package status'
+        message: "Only Testers can update package status",
       });
     }
 
     // Validate status
-    if (!['accepted', 'rejected', 'pending'].includes(status)) {
+    if (!["accepted", "rejected", "pending"].includes(status)) {
       return res.status(400).json({
         success: false,
-        message: 'Invalid status. Must be accepted, rejected, or pending'
+        message: "Invalid status. Must be accepted, rejected, or pending",
       });
     }
 
@@ -245,7 +245,7 @@ const updatePackageStatus = async (req, res) => {
     if (!package) {
       return res.status(404).json({
         success: false,
-        message: 'Package not found'
+        message: "Package not found",
       });
     }
 
@@ -255,16 +255,15 @@ const updatePackageStatus = async (req, res) => {
 
     res.json({
       success: true,
-      message: 'Package status updated successfully',
-      data: package
+      message: "Package status updated successfully",
+      data: package,
     });
-
   } catch (error) {
-    console.error('Update package status error:', error);
+    console.error("Update package status error:", error);
     res.status(500).json({
       success: false,
-      message: 'Internal server error',
-      error: error.message
+      message: "Internal server error",
+      error: error.message,
     });
   }
 };
@@ -281,16 +280,18 @@ const deletePackage = async (req, res) => {
     // Find package with uploads
     const package = await Package.findOne({
       where: { pkg_name },
-      include: [{
-        model: Upload,
-        as: 'uploads'
-      }]
+      include: [
+        {
+          model: Upload,
+          as: "uploads",
+        },
+      ],
     });
 
     if (!package) {
       return res.status(404).json({
         success: false,
-        message: 'Package not found'
+        message: "Package not found",
       });
     }
 
@@ -298,7 +299,7 @@ const deletePackage = async (req, res) => {
     if (package.created_by_username !== username) {
       return res.status(403).json({
         success: false,
-        message: 'Only the package creator can delete it'
+        message: "Only the package creator can delete it",
       });
     }
 
@@ -310,7 +311,10 @@ const deletePackage = async (req, res) => {
           await tcpClient.del(upload.file_path);
           console.log(`Deleted file from FTP: ${upload.file_path}`);
         } catch (ftpError) {
-          console.error(`Failed to delete file from FTP: ${upload.file_path}`, ftpError);
+          console.error(
+            `Failed to delete file from FTP: ${upload.file_path}`,
+            ftpError
+          );
           deletionErrors.push(upload.file_path);
         }
       }
@@ -319,22 +323,22 @@ const deletePackage = async (req, res) => {
     // Delete package (cascade will handle uploads in DB)
     await package.destroy();
 
-    const responseMessage = deletionErrors.length > 0
-      ? `Package deleted successfully, but ${deletionErrors.length} file(s) could not be deleted from FTP server`
-      : 'Package deleted successfully';
+    const responseMessage =
+      deletionErrors.length > 0
+        ? `Package deleted successfully, but ${deletionErrors.length} file(s) could not be deleted from FTP server`
+        : "Package deleted successfully";
 
     res.json({
       success: true,
       message: responseMessage,
-      ftpDeletionErrors: deletionErrors.length > 0 ? deletionErrors : undefined
+      ftpDeletionErrors: deletionErrors.length > 0 ? deletionErrors : undefined,
     });
-
   } catch (error) {
-    console.error('Delete package error:', error);
+    console.error("Delete package error:", error);
     res.status(500).json({
       success: false,
-      message: 'Internal server error',
-      error: error.message
+      message: "Internal server error",
+      error: error.message,
     });
   }
 };
@@ -352,14 +356,14 @@ const uploadFile = async (req, res) => {
     if (!req.file) {
       return res.status(400).json({
         success: false,
-        message: 'No file uploaded'
+        message: "No file uploaded",
       });
     }
 
     // Find package
     const package = await Package.findOne({
       where: { pkg_name },
-      include: [{ model: Repository, as: 'repository' }]
+      include: [{ model: Repository, as: "repository" }],
     });
 
     if (!package) {
@@ -367,7 +371,7 @@ const uploadFile = async (req, res) => {
       fs.unlinkSync(req.file.path);
       return res.status(404).json({
         success: false,
-        message: 'Package not found'
+        message: "Package not found",
       });
     }
 
@@ -382,25 +386,23 @@ const uploadFile = async (req, res) => {
       pkg_name: pkg_name,
       repo_name: package.repo_for_pkg,
       uploaded_by: username,
-      file_path: remoteFilename
+      file_path: remoteFilename,
     });
-
     // Clean up local file after successful upload
     fs.unlinkSync(localFilePath);
 
     res.json({
       success: true,
-      message: 'File uploaded successfully',
+      message: "File uploaded successfully",
       data: {
         upload_id: upload.upload_id,
         file_path: remoteFilename,
-        bytes: result.bytes
-      }
+        bytes: result.bytes,
+      },
     });
-
   } catch (error) {
-    console.error('Upload file error:', error);
-    
+    console.error("Upload file error:", error);
+
     // Clean up local file on error
     if (req.file && fs.existsSync(req.file.path)) {
       fs.unlinkSync(req.file.path);
@@ -408,8 +410,8 @@ const uploadFile = async (req, res) => {
 
     res.status(500).json({
       success: false,
-      message: 'File upload failed',
-      error: error.message
+      message: "File upload failed",
+      error: error.message,
     });
   }
 };
@@ -428,40 +430,39 @@ const downloadFile = async (req, res) => {
     if (!package) {
       return res.status(404).json({
         success: false,
-        message: 'Package not found'
+        message: "Package not found",
       });
     }
 
     // Verify file exists in uploads
     const upload = await Upload.findOne({
-      where: { 
+      where: {
         pkg_name,
-        file_path: filename 
-      }
+        file_path: filename,
+      },
     });
 
     if (!upload) {
       return res.status(404).json({
         success: false,
-        message: 'File not found'
+        message: "File not found",
       });
     }
 
     // Set headers for file download
-    res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
-    res.setHeader('Content-Type', 'application/octet-stream');
+    res.setHeader("Content-Disposition", `attachment; filename="${filename}"`);
+    res.setHeader("Content-Type", "application/octet-stream");
 
     // Download from TCP server and pipe to response
     await tcpClient.get(filename, res);
-
   } catch (error) {
-    console.error('Download file error:', error);
-    
+    console.error("Download file error:", error);
+
     if (!res.headersSent) {
       res.status(500).json({
         success: false,
-        message: 'File download failed',
-        error: error.message
+        message: "File download failed",
+        error: error.message,
       });
     }
   }
@@ -482,22 +483,22 @@ const deleteFile = async (req, res) => {
     if (!package) {
       return res.status(404).json({
         success: false,
-        message: 'Package not found'
+        message: "Package not found",
       });
     }
 
     // Verify file exists in uploads
     const upload = await Upload.findOne({
-      where: { 
+      where: {
         pkg_name,
-        file_path: filename 
-      }
+        file_path: filename,
+      },
     });
 
     if (!upload) {
       return res.status(404).json({
         success: false,
-        message: 'File not found'
+        message: "File not found",
       });
     }
 
@@ -505,7 +506,7 @@ const deleteFile = async (req, res) => {
     if (upload.uploaded_by !== username) {
       return res.status(403).json({
         success: false,
-        message: 'Only the file uploader can delete it'
+        message: "Only the file uploader can delete it",
       });
     }
 
@@ -517,15 +518,14 @@ const deleteFile = async (req, res) => {
 
     res.json({
       success: true,
-      message: 'File deleted successfully'
+      message: "File deleted successfully",
     });
-
   } catch (error) {
-    console.error('Delete file error:', error);
+    console.error("Delete file error:", error);
     res.status(500).json({
       success: false,
-      message: 'File deletion failed',
-      error: error.message
+      message: "File deletion failed",
+      error: error.message,
     });
   }
 };
@@ -539,5 +539,5 @@ module.exports = {
   deletePackage,
   uploadFile,
   downloadFile,
-  deleteFile
+  deleteFile,
 };

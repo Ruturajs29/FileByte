@@ -120,6 +120,11 @@ const RepoList = () => {
   };
 
   const handleRoleToggle = (role) => {
+    // Prevent deselecting the creator's own role
+    if (role === user.role) {
+      return;
+    }
+
     setFormData(prev => {
       const hasAccess = [...prev.hasAccess];
       const index = hasAccess.indexOf(role);
@@ -227,7 +232,7 @@ const RepoList = () => {
             onChange={handleInputChange}
           />
           <FormControl component="fieldset" sx={{ mt: 2, width: '100%' }}>
-            <FormLabel component="legend">Access Roles (Select one or more)</FormLabel>
+            <FormLabel component="legend">Access Roles (Your role is required, others are optional)</FormLabel>
             <FormGroup>
               <FormControlLabel
                 control={
@@ -235,9 +240,10 @@ const RepoList = () => {
                     checked={formData.hasAccess.includes('Developer')}
                     onChange={() => handleRoleToggle('Developer')}
                     color="primary"
+                    disabled={user.role === 'Developer'}
                   />
                 }
-                label="Developer"
+                label={user.role === 'Developer' ? 'Developer (Your Role - Required)' : 'Developer'}
               />
               <FormControlLabel
                 control={
@@ -245,9 +251,10 @@ const RepoList = () => {
                     checked={formData.hasAccess.includes('Tester')}
                     onChange={() => handleRoleToggle('Tester')}
                     color="success"
+                    disabled={user.role === 'Tester'}
                   />
                 }
-                label="Tester"
+                label={user.role === 'Tester' ? 'Tester (Your Role - Required)' : 'Tester'}
               />
               <FormControlLabel
                 control={
@@ -255,9 +262,10 @@ const RepoList = () => {
                     checked={formData.hasAccess.includes('HR')}
                     onChange={() => handleRoleToggle('HR')}
                     color="error"
+                    disabled={user.role === 'HR'}
                   />
                 }
-                label="HR"
+                label={user.role === 'HR' ? 'HR (Your Role - Required)' : 'HR'}
               />
             </FormGroup>
           </FormControl>
